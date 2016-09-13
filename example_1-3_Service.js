@@ -1,9 +1,9 @@
 var http = require('http');
 var fs = require('fs');
+var counter = 0;
 
 // write out numbers
 function writeNumbers(res) {
-	var counter = 0;
 
 	// increment counter and write to client
 	for (var i = 0; i<100; i++) {
@@ -14,8 +14,6 @@ function writeNumbers(res) {
 
 // create http server
 http.createServer(function (req, res) {
-	// Output the request url to console
-	console.log('Requesting ' + req.url);
 
 	// compose the requested file's name from the url
 	var query = require('url').parse(req.url).query;
