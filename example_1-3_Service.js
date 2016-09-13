@@ -17,7 +17,7 @@ http.createServer(function (req, res) {
 
 	// compose the requested file's name from the url
 	var query = require('url').parse(req.url).query;
-	var app = require('querystring').parse(query).file + ".txt";
+	app = require('querystring').parse(query).file + ".txt";
 
 	// container header
 	res.writeHead(200, {'Content-Type': 'text/plain'});
